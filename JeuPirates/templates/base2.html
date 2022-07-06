@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <link {% block style %}{% endblock %}>
+        <title>{% block titre %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <div class="divMenuActions">
+            <ul class="ulMenuActions">
+                <li>Forum</li>
+                <li>Boutique</li>
+                <li>Contact</li>
+                <li>Se déconnecter</li>
+            </ul>
+        </div>
+
+        <div class="divMenuNavigation">
+            <ul class="ulMenuNavigation">
+                <li>Mon pirate</li>
+                <li>Carte aux trésors</li>
+                <li>Le marché</li>
+                <li>Combattre</li>
+            </ul>
+        </div>
+
+        <div class="divContenuPrincipal">
+            {% block contenuPrincipal %}{% endblock %}
+        </div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titre %} Se connecter {% endblock %}
+
+{% block contenu %}
+
+    <!-- Gestion des erreurs d'identification #} -->
+    {% if connexionErreur %}
+        <p>Les informations d'identification saisies sont incorrectes. Veuillez recommencer !</p>
+    {% endif %}
+
+
+    {% if user.is_authenticated %}
+    <p>Bonjour {{user.username}}</p>
+
+    {% else %}
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Se connecter">
+    </form>
+
+    {% endif %}
+
+{% endblock %}

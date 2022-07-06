@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+
+{% block titre %} Informations sur le pirate {% endblock %}
+
+{% block contenuPrincipal %}
+
+    <div>Retrouve ici les informations sur ton pirate.</div>
+    <div>L'utilisateur est {{user.username}}</div>
+    <div>Nom du pirate :  {{pirate.nom}}</div>
+
+    <div class="photoPirate">
+    </div>
+
+    <div>
+        <ul>
+            {% for nomInfo in pirate.values %}
+                <li>{{nomInfo}}</li>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

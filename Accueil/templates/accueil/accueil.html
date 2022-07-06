@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block titre %}NOMJEU - Accueil{% endblock %}
+
+{% block contenu %}
+    <h1>Bienvenue sur NOMJEU !</h1>
+    <div class="texteIntroductif">
+        Le jeu sur lequel tu incarnes un pirate, dont la vie se partage entre pillages, combats et beuveries!
+        Monte un équipage et mène tes hommes au combat.
+        Découvre des trésors et navigue aux quatres flots.
+        Deviens le plus craint des pirates qui peuplent ce monde !
+    </div>
+
+    <div class="liens">
+        <div class="lienInscription">
+            <a href="{% url 'inscription' %}">Je souhaite m'inscrire !</a>
+        </div>
+
+        <div class="lienConnexion">
+            <a href="{% url 'connexion' %}">Je souhaite me connecter !</a>
+        </div>
+
+    </div>
+
+
+{% endblock %}
