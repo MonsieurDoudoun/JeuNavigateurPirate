@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from Utilisateur.forms import ConnexionForm, InscriptionForm
 from Pirate.models import Pirate_Profil, Pirate_Inventaire
@@ -27,7 +27,7 @@ def Inscription(request):
             nouvelleExtensionUtilisateur.utilisateur = nouvelUtilisateur
             nouvelleExtensionUtilisateur.pirate = nouveauPirate
             nouvelleExtensionUtilisateur.save()
-            return render(request, "utilisateur/PageConnexion.html", locals()) # Ici, il faut redirect vers la page du pirate du coup.
+            return redirect('infosPirate')
 
     else:
         form = InscriptionForm()
@@ -50,6 +50,7 @@ def Connexion(request):
 
             if utilisateur:
                 login(request, utilisateur)
+                return redirect('infosPirate')
             else:
                 connexionErreur = True
 
